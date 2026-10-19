@@ -1,0 +1,154 @@
+% 电磁力相关公式整理
+% 涵盖：电磁场形成、带电粒子运动、带电/磁性粒子流影响
+
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{geometry}
+\geometry{a4paper, margin=2cm}
+
+\title{电磁力相关公式大全}
+\author{}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section{电磁场的基本方程（麦克斯韦方程组）}
+电磁场由电荷和电流产生，其演化由麦克斯韦方程组描述：
+
+\subsection{高斯定律（电场）}
+\begin{equation}
+\nabla \cdot \mathbf{E} = \frac{\rho}{\varepsilon_0}
+\end{equation}
+其中 $\rho$ 是电荷密度，$\varepsilon_0$ 是真空介电常数。
+
+\subsection{高斯磁定律}
+\begin{equation}
+\nabla \cdot \mathbf{B} = 0
+\end{equation}
+磁场是无源场，不存在磁单极子。
+
+\subsection{法拉第电磁感应定律}
+\begin{equation}
+\nabla \times \mathbf{E} = -\frac{\partial \mathbf{B}}{\partial t}
+\end{equation}
+时变磁场产生电场。
+
+\subsection{安培-麦克斯韦定律}
+\begin{equation}
+\nabla \times \mathbf{B} = \mu_0 \mathbf{J} + \mu_0 \varepsilon_0 \frac{\partial \mathbf{E}}{\partial t}
+\end{equation}
+其中 $\mathbf{J}$ 是电流密度，$\mu_0$ 是真空磁导率。
+
+\section{带电粒子在电磁场中的运动}
+\subsection{洛伦兹力}
+\begin{equation}
+\mathbf{F} = q(\mathbf{E} + \mathbf{v} \times \mathbf{B})
+\end{equation}
+其中 $q$ 是电荷量，$\mathbf{v}$ 是粒子速度。
+
+\subsection{运动方程}
+\begin{equation}
+m \frac{d\mathbf{v}}{dt} = q(\mathbf{E} + \mathbf{v} \times \mathbf{B})
+\end{equation}
+
+\section{电荷产生的电场（库仑定律）}
+\subsection{点电荷的电场}
+\begin{equation}
+\mathbf{E} = \frac{1}{4\pi\varepsilon_0} \frac{q}{r^2} \hat{\mathbf{r}}
+\end{equation}
+
+\subsection{连续电荷分布的电场}
+\begin{equation}
+\mathbf{E}(\mathbf{r}) = \frac{1}{4\pi\varepsilon_0} \int \frac{\rho(\mathbf{r}')}{|\mathbf{r}-\mathbf{r}'|^3} (\mathbf{r}-\mathbf{r}') \, d^3r'
+\end{equation}
+
+\section{电流产生的磁场（毕奥-萨伐尔定律）}
+\subsection{电流元的磁场}
+\begin{equation}
+d\mathbf{B} = \frac{\mu_0}{4\pi} \frac{I \, d\mathbf{l} \times \hat{\mathbf{r}}}{r^2}
+\end{equation}
+
+\subsection{连续电流分布的磁场}
+\begin{equation}
+\mathbf{B}(\mathbf{r}) = \frac{\mu_0}{4\pi} \int \frac{\mathbf{J}(\mathbf{r}') \times (\mathbf{r}-\mathbf{r}')}{|\mathbf{r}-\mathbf{r}'|^3} \, d^3r'
+\end{equation}
+
+\section{带电粒子流对电磁场的影响}
+\subsection{电荷守恒（连续性方程）}
+\begin{equation}
+\frac{\partial \rho}{\partial t} + \nabla \cdot \mathbf{J} = 0
+\end{equation}
+
+\subsection{电流密度与电荷密度的关系}
+\begin{equation}
+\mathbf{J} = \rho \mathbf{v}
+\end{equation}
+其中 $\mathbf{v}$ 是电荷的漂移速度。
+
+\subsection{电荷运动产生的电磁场（李纳-维谢尔势）}
+\begin{equation}
+\phi(\mathbf{r}, t) = \frac{1}{4\pi\varepsilon_0} \frac{q}{(1-\boldsymbol{\beta}\cdot\hat{\mathbf{n}})R}
+\end{equation}
+\begin{equation}
+\mathbf{A}(\mathbf{r}, t) = \frac{\mu_0}{4\pi} \frac{q\mathbf{v}}{(1-\boldsymbol{\beta}\cdot\hat{\mathbf{n}})R}
+\end{equation}
+其中 $\boldsymbol{\beta} = \mathbf{v}/c$，$R$ 是延迟距离。
+
+\section{磁性粒子流对电磁场的影响}
+\subsection{磁化强度与磁场的关系}
+\begin{equation}
+\mathbf{B} = \mu_0(\mathbf{H} + \mathbf{M})
+\end{equation}
+其中 $\mathbf{M}$ 是磁化强度。
+
+\subsection{磁化电流密度}
+\begin{equation}
+\mathbf{J}_m = \nabla \times \mathbf{M}
+\end{equation}
+
+\subsection{束缚电流密度}
+\begin{equation}
+\mathbf{J}_b = \nabla \times \mathbf{M} + \frac{\partial \mathbf{P}}{\partial t}
+\end{equation}
+其中 $\mathbf{P}$ 是电极化强度。
+
+\section{电磁场的能量和动量}
+\subsection{电磁场能量密度}
+\begin{equation}
+u = \frac{1}{2}\left(\varepsilon_0 E^2 + \frac{1}{\mu_0}B^2\right)
+\end{equation}
+
+\subsection{坡印廷矢量（能流密度）}
+\begin{equation}
+\mathbf{S} = \frac{1}{\mu_0} \mathbf{E} \times \mathbf{B}
+\end{equation}
+
+\subsection{电磁场动量密度}
+\begin{equation}
+\mathbf{g} = \varepsilon_0 \mathbf{E} \times \mathbf{B} = \frac{\mathbf{S}}{c^2}
+\end{equation}
+
+\section{电磁波的传播}
+\subsection{真空中的波动方程}
+\begin{equation}
+\nabla^2 \mathbf{E} - \frac{1}{c^2}\frac{\partial^2 \mathbf{E}}{\partial t^2} = 0
+\end{equation}
+\begin{equation}
+\nabla^2 \mathbf{B} - \frac{1}{c^2}\frac{\partial^2 \mathbf{B}}{\partial t^2} = 0
+\end{equation}
+其中 $c = 1/\sqrt{\varepsilon_0\mu_0}$ 是光速。
+
+\section{带电粒子辐射（电磁场影响）}
+\subsection{拉莫尔公式（非相对论辐射功率）}
+\begin{equation}
+P = \frac{q^2 a^2}{6\pi\varepsilon_0 c^3}
+\end{equation}
+
+\subsection{相对论辐射功率（李纳-维谢尔公式）}
+\begin{equation}
+P = \frac{q^2}{6\pi\varepsilon_0 c^3} \frac{\gamma^6}{m^2} \left[ |\mathbf{F}|^2 - \frac{1}{c^2}(\mathbf{F}\cdot\mathbf{v})^2 \right]
+\end{equation}
+
+\end{document}
